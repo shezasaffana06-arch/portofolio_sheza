@@ -245,7 +245,7 @@ function Contact({ dark }) {
       </h2>
 
       <p className="text-gray-400 mb-6">
-        Tertarik untuk berteman denganku? Yuk hubungi aku 👇
+        Tertarik untuk berteman denganku? Yuk hubungi aku !
       </p>
 
       <div className={`max-w-xl mx-auto mb-10 p-6 rounded-2xl ${
