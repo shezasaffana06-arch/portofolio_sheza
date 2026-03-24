@@ -1,13 +1,145 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================= */
+/* GLOBAL STYLE */
+/* ========================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  cursor: none; /* cursor custom */
+  background: black;
+  overflow-x: hidden;
+}
+
+/* ========================= */
+/* SELECTION */
+/* ========================= */
+
+::selection {
+  background: #22d3ee;
+  color: black;
+}
+
+/* ========================= */
+/* BACKGROUND GLOW */
+/* ========================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: #22d3ee;
+  filter: blur(200px);
+  opacity: 0.08;
+  top: 10%;
+  left: 20%;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: purple;
+  filter: blur(200px);
+  opacity: 0.05;
+  bottom: 10%;
+  right: 20%;
+  z-index: -1;
+}
+
+/* ========================= */
+/* SCROLLBAR */
+/* ========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22d3ee;
+  border-radius: 10px;
+}
+
+/* ========================= */
+/* GLOBAL TRANSITION */
+/* ========================= */
+
+* {
+  transition: all 0.3s ease;
+}
+
+/* ========================= */
+/* TEXT GLOW */
+/* ========================= */
+
+.glow-text {
+  text-shadow: 0 0 10px #22d3ee, 0 0 20px #22d3ee;
+}
+
+/* ========================= */
+/* CURSOR STAR EFFECT */
+/* ========================= */
+
+.star {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: cyan;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 0.5s linear;
+  z-index: 9999;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* ========================= */
+/* FLOAT ANIMATION (CARD) */
+/* ========================= */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ========================= */
+/* GLOW HOVER EFFECT */
+/* ========================= */
+
+.glow-card:hover {
+  box-shadow: 0 0 20px #22d3ee, 0 0 40px #22d3ee;
 }
