@@ -23,6 +23,7 @@ export default function App() {
         <Navbar dark={dark} setDark={setDark} />
         <Hero />
         <About dark={dark} />
+        <Project dark={dark}/>
         <Skills dark={dark} />
         <Contact dark={dark} />
         <Footer />
@@ -41,6 +42,7 @@ function Navbar({ dark, setDark }) {
 
       <div className="flex items-center gap-6 text-sm">
         <a href="#about">About</a>
+        <a href="#projects">Project</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
 
@@ -104,7 +106,7 @@ function Hero() {
         Seorang Pelajar yang Suka Mempelajari IT
       </p>
 
-      <a href="#projects" className="z-10 mt-6">
+      <a href="#skills" className="z-10 mt-6">
         <button className="bg-cyan-400 text-black px-6 py-3 rounded-2xl hover:scale-110 transition shadow-lg">
           Lihat Skills
         </button>
@@ -148,6 +150,56 @@ function About({ dark }) {
           >
             <h3 className="text-cyan-400 font-bold">{item.title}</h3>
             <p>{item.value}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// =========================
+// PROJECT
+// =========================
+function Project({ dark }) {
+  const projects = [
+    {
+      title: "Website Portfolio Pribadi",
+      desc: "Website portfolio modern dengan React, Tailwind, animasi, dark mode.",
+       link: "#",
+    },
+  
+  ];
+
+  return (
+    <section id="projects" className="p-10 max-w-6xl mx-auto">
+      <h2 className="text-3xl font-bold mb-10 text-center text-cyan-400">
+        My Project
+      </h2>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        {projects.map((item, index) => (
+          <div
+            key={index}
+            className={`p-6 rounded-2xl shadow-lg transition transform hover:scale-105 ${
+              dark ? "bg-gray-900 hover:bg-gray-800" : "bg-white"
+            }`}
+          >
+            <h3 className="text-xl font-bold text-cyan-400 mb-3">
+              {item.title}
+            </h3>
+
+            <p className="text-gray-400 mb-4">
+              {item.desc}
+            </p>
+
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-cyan-400 hover:underline"
+            >
+              Lihat Project →
+            </a>
           </div>
         ))}
       </div>
@@ -251,9 +303,32 @@ function Contact({ dark }) {
       <div className={`max-w-xl mx-auto mb-10 p-6 rounded-2xl ${
         dark ? "bg-gray-900" : "bg-white"
       }`}>
-        <p>📧 s.saffana@gmail.com</p>
-        <p>📸 @shezasaff_</p>
-        <p>💻 github.com/shezasaf</p>
+        <a 
+  href="mailto:s.saffana@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block hover:text-cyan-400 transition"
+>
+  📧 s.saffana@gmail.com
+</a>
+
+<a 
+  href="https://instagram.com/shzasaffana_"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block hover:text-pink-400 transition"
+>
+  📸 @shezasaff_
+</a>
+
+<a 
+  href="https://github.com/shezasaffana06-arch"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block hover:text-blue-400 transition"
+>
+  💻 github.com/shezasaffana06-arch
+</a>
       </div>
 
       <div className="max-w-xl mx-auto space-y-4">
