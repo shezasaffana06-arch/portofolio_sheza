@@ -79,7 +79,7 @@ function Hero() {
         <div className="absolute inset-0 rounded-full bg-cyan-400 blur-2xl opacity-30"></div>
 
         <img
-          src="/foto.jpg"
+          src="/foto (2).jpg"
           alt="profile"
           className="w-40 h-40 object-cover rounded-full border-4 border-cyan-400 relative z-10 shadow-2xl"
         />
